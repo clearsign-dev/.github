@@ -10,9 +10,14 @@ what looked like an ordinary token transfer. What they approved was a
 balance.
 
 **ClearSign decodes the transaction in front of you from the bytes themselves**,
-with no network access, no knowledge of your wallet, and no input from any
-service — including the one that showed it to you. It holds no keys and signs
-nothing. Your hardware wallet still does that.
+with no knowledge of your wallet and no input from any service — including the
+one that showed it to you. It holds no keys and signs nothing. Your hardware
+wallet still does that.
+
+The decoder never opens a socket: paste a transaction and nothing leaves the
+machine. The one feature that reaches the network is fetching a queued
+transaction by its hash, which contacts Safe's service and nothing else. The
+signer image has no network stack compiled into its kernel at all.
 
 ### What is here
 
